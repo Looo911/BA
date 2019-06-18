@@ -1,0 +1,131 @@
+\section{Metriken}
+Um die nun implementierte Technik zu evaluieren, müssen die im dritten Kapitel genannten Metriken genauer analysiert werden. Deswegen soll ein Blick in verwandte Arbeiten der letzten Jahre Hinweise darauf geben, wie diese Metriken in anderen Arbeiten quantifiziert wurden und ob bzw. wie eine ähnliche Vorgehensweise in unserem Fall angewendet werden kann.
+
+\subsection{Bearbeitungszeit}
+Selbstverständlich ist die Effizienz ein Kriterium, welches implizit in jeder Arbeit berücksichtigt wird, da eine schnelle und effektive Navigation immer ein wichtiges Ziel einer jeden Technik ist. Wenn dies überhaupt explizit gemessen wurde, wurde dies in den meisten Fällen schlicht und einfach mit der Bearbeitungszeit erfasst, welche gegen die einer ähnlichen Technik verglichen wurde (\cite{Suma2010EvaluationEnvironments}, \cite{Kopper2006DesignEnvironments}, \cite{3_Pierce1997}, \cite{Wingrave2006OvercomingWIM}). 
+Bei Pierce et al. (\cite{3_Pierce1997}) liegt der Schwerpunkt vor allem anderen auf diesem Punkt. So wird hier begründet, dass die Durchführungszeit auch andere Metriken parallel mit abfragt:
+
+\begin{addmargin}[25pt]{0pt} 
+
+\textit{“In addition, travel time indirectly measures how easily users of a technique can maintain their orientation, form and execute plans, and detect destination.”}
+
+\end{addmargin}
+
+Doch bei der Entwicklung dieser Technik stellen sich zwei Problematiken, denn zum einen gibt es keine Technik, gegen die verglichen werden kann, zum anderen kann die Kommunikation zwischen Gruppenmitgliedern die resultierende Bearbeitungszeit negativ beeinflussen, obwohl sie ein Indikator für eine gut abgestimmte Reiseplanung sein kann.
+
+Die Herangehensweise soll in diesem Fall also eine andere sein:
+Die Navigation durch Platzieren der Nutzerplattform in der WIM kann analog zu den Platzierungsaufgaben mit einem Stift, bzw. mit Lochscheiben und Steckstiften in den frühen Studien von Paul Fitts (Fitts, 1954) in einem dreidimensionalen Interface aufgefasst werden. Die Anwendbarkeit seines Modells auf zwei- und dreidimensionale virtuelle Umgebungen wurde in unzähligen Folgestudien nachgewiesen (siehe MacKenzie, 1992, Drewes, 2010, Zhai, 2004 für einen Überblick der Forschung).
+
+Fitts' Gesetz beschreibt die lineare Abhängigkeit der benötigten Zeit (MT) von einem
+Schwierigkeitsindex (ID), der sich wiederum aus der Zielentfernung (D) und Zielgröße (W) ableiten lässt ($ID=log_2(2D/W)$).
+
+Fitts testete Schwierigkeitsindizes zwischen 1 und 10. Seine Teilnehmer benötigten dafür je nach Schwierigkeit zwischen 180 und 1100 ms (Fitts, 1954). An Computerarbeitsplätzen ist die Effizienz der Zielbewegungen typischerweise etwas schlechter (z.B. \cite{Forlines}, \cite{MacKenzie:1992:FLR:1461854.1461857} \cite{MacKenzie:2008:FTS:1357054.1357308}, \cite{Wobbrock:2008:EMP:1357054.1357306}), vor 
+allem im Falle von 3D Zielbewegungen in virtuellen Umgebungen in denen kein taktiles Feedback verfügbar ist (z.B. Arsenault und Ware, 2004, Grossman und Balakrishnan, 2004, Teather und Stürzlinger, 2011, Lubos et al., 2014).
+
+Basierend auf den oben erwähnten Forschungsergebnissen entschieden wir
+uns, dass der maximale Schwierigkeitsindex (ID) der motorischen
+Interaktionsbewegungen bei der Nutzung unserer Technik nicht höher als 5 sein sollte, um Ineffizienz und Frustration zu vermeiden. Offenbar benötigen Nutzer auch für 3D
+Selektionsaufgaben mit etwas geringeren IDs schon etwa zwei Sekunden. Im
+Zusammenhang mit einer Zielentfernung von einem Meter, was in etwa der Distanz, die man angenehm durch Ausstrecken des Armes erreichen kann entspricht, ergibt sich daraus eine minimale Zielgröße von etwa 5 bis 6 cm. Dies wiederum entspricht bei der gewählten Skalierung (1:100) der WIM einer Genauigkeit von (+/-) 2,5 bis 3,0 Metern, mit denen die miniaturisierte Plattform innerhalb von ca. 2 Sekunden platziert werden kann.
+
+
+
+\subsection{Genauigkeit}
+Die Genauigkeit ist stets mit der resultierenden Distanz zwischen Position des Nutzers nach der Navigation und eines im Vorhinein festgelegten Ziels zu bestimmen. 
+Explizit wird dies beispielsweise in \cite{Krekhov2018GulliVR} abgefragt: Bei der \textit{“Targeting”} genannten Technik soll der Nutzer in einem Zielgebiet landen, welches durch eine farbige Zielscheibe gekennzeichnet ist. Die durchschnittliche Distanz zum Bullauge ist dabei das Maß, welches die Genauigkeit bestimmt.
+Wichtig zu erwähnen ist, dass die Genauigkeit in den meisten Fällen mit der Bearbeitungszeit zusammenhängt: Hat man mehr Zeit oder nimmt man sie sich, so ist in den meisten Fällen die Genauigkeit größer (vgl. dazu auch vorheriger Unterpunkt!).
+So wird in manchen Arbeiten (\cite{BowmanTestbedTechniques}, \cite{3_Pierce1997}) eine bestimmte Genauigkeit vorausgesetzt, in dem man sich innerhalb eines bestimmten Radius zum Ziel befinden muss, damit die Reise als abgeschlossen zählt.
+Die Genauigkeit so exakt zu quantifizieren ist in unseren Augen allerdings nicht zwangsläufig notwendig und wird durch den Fitt's Task hinreichend abgedeckt. 
+Viel wichtiger, als möglichst nahe an einem vorher festgelegten Punkt zu landen, ist unserer Meinung nach, dass das gewünschte Ziel vollständig sichtbar ist. 
+Deshalb erhalten die Nutzer in unserer Studie Bilder von Objekten, die sich in der zu bereisenden Umgebung befinden, welche sie so ansteuern müssen, dass alle Details auf dem Bild auch in ihrer Perspektive zu sehen sind.
+
+Ein weiteres Kriterium, mit dem die Genauigkeit ebenfalls gemessen werden kann ist die Häufigkeit von Kollisionen mit der virtuellen Umgebung(\cite{Suma2010EvaluationEnvironments}). Da unsere Technik die Möglichkeit bietet, die Nutzerplattform so zu platzieren, dass Kollisionen im Vorhinein ausgeschlossen werden und eine zukünftige Weiterentwicklung der Technik eine Kollisionsabfrage beinhalten könnte, soll dieses Kriterium nicht weiter abgefragt werden.
+
+
+\subsection{Informationsaufnahme (Information Gathering)}
+Mit der Aufnahme von Informationen beschäftigen sich Suma et al. (\cite{Suma2010EvaluationEnvironments}). Sie schlagen dabei verschiedene Möglichkeiten vor:
+
+
+\textbf{Objekterkennung:}\\
+Der Nutzer erhält eine Liste von 36 Objekten, von denen er die Hälfte auf seiner Reise sehen konnte. Die andere Hälfte war nicht in der virtuellen Umgebung platziert. Er erhält 8 Minuten Zeit, die Objekte mit “War in der Umgebung” und “War nicht in der Umgebung” zu klassifizieren. In der Evaluierung werden die False Positives werden von den Correct True Positives abgezogen und es ergibt sich somit ein Score von 0 - 18.
+
+
+\textbf{Objektplatzierung:}\\
+Der Nutzer erhält eine Karte der von ihm bereisten Umgebung sowie eine nummerierte Liste mit allen 18 Objekten, die in der Umgebung platziert waren. 
+Er wird gebeten, die Nummer aller Objekte an der Stelle in der Karte einzutragen, an der er sie gesehen hat (oder gemeint gesehen zu haben).
+Das Ergebnis wird im Folgenden von einer Drittperson geprüft und bewertet.
+Dabei wird jedes richtig platzierte Objekt mit einem Punkt gewertet und es ergibt sich auch hier ein Score von 0 - 18. 
+
+Die Objekterkennung wird in unserem Fall nicht abgefragt, da die Nutzer nur Teile der Karte bereisen und sich dabei auf das Finden der Bilder konzentrieren, sodass der Fokus auf einem anderen Task liegt und etwaige Objekte übersehen werden können.
+Die Objektplatzierung allerdings wird allerdings auch in unserem Fall vorgenommen. Dabei werden den Nutzern, nachdem sie die Karte bereist haben und alle Bilder gefunden haben, diese Bilder erneut ausgehändigt, sowie eine Karte, die nur die Umrisse der bebauten "Inseln" sowie die Kirche als Orientierungspunkt zeigt (vgl. Abbildung).
+In dieser sollen die Nutzer dann die Bildnummern, sowie die Blickrichtung in Form eines Pfeils einzeichnen.
+
+
+\subsection{Nutzerkomfort:}
+Um den Nutzerkomfort zu messen wird neben generellen Fragen zum Wohlbefinden in der Mehrzahl aller Arbeiten (z.B. \cite{Krekhov2018GulliVR}, \cite{Suma2010EvaluationEnvironments}, \cite{Usoh1999WalkingEnvironments}) der Simulator Sickness Questionnaire genutzt (\cite{Kennedy1993SimulatorSickness}). Dieser fragt das generelle Wohlbefinden nach dem Aufenthalt in einer Simulation bzw. in unserem Fall nach der Navigation in einer Simulation ab.
+
+Auch in unserem Fall soll die Technik so entwickelt werden, dass durch sie keine merkliche Verschlechterung des allgemeinen Wohlbefindens der Nutzer eintritt. Dieses wird durch das Durchführen des SSQ vor und nach jedem Durchlauf der Studie ermittelt, wobei sich der Wert nicht oder kaum (hier noch eine Zahl?) verschlechtern dürfte, da unsere Technik wie bereits beschrieben mit einem minimum an Steering und Motionflow auskommt.
+
+\subsection{Raumwahrnehmung}
+Die Raumwahrnehmung der Nutzer wird häufig (z.B. \cite{Kopper2006DesignEnvironments}, \cite{Richardson1999SpatialEnvironments}) abgefragt, indem der Nutzer die Himmelsrichtung zu einem anderen, schon bekannten Ort anzeigen muss. Hierfür wird der angezeigte Winkel von dem tatsächlichen Winkel subtrahiert, um die tatsächliche Abweichung zu bestimmen (“Pointing error”). \cite{Kopper2006DesignEnvironments} beschreibt dies anders als nach Bowmans Metriken als “Accuracy”.
+In der Arbeit von Vuong \cite{29_POINTING_ERROR_jennyVuong_small}, S.23 werden aus verschiedenen Studien in virtuellen Umgebungen solche resultierenden Abweichungen zusammengefasst. Die meisten dieser Abweichungen liegen im Gebiet von 10 bis 40 Grad.
+Ein Beispiel davon ist die Arbeit von Thorndyke et al. (\cite{Thorndyke1980LNAVIGATION}), in welcher ein Experiment durchgeführt wird, in dem Testpersonen sich eine Umgebung durch Navigieren oder dem Lernen einer Karte merken sollen und dieses Wissen im Folgenden abgefragt wurde.
+Die (in diesem Fall nicht virtuelle) Umgebung ist dabei ein Stockwerk eines Gebäudes. Die Testpersonen wurden in zwei Gruppen aufgeteilt: Diejenigen, die die Karte des Stockwerks intensiv (bis sie  lernen und diejenigen, die das Stockwerk durch Navigieren in diesem gelernt haben, da sie unterschiedliche Zeitdauer dort gearbeitet haben ( “1 to 2 months, 6 to 12 months, or 12 to 24 months”).
+In verschiedenen Experimenten mussten sie u.a. die Richtungen anderer Räume anzeigen.
+Die Ergebnisse dabei sahen wie folgt aus: 
+
+Map learner: $\approx 39 ^\circ$ \\
+1-2 months experience: $\approx  25 ^\circ$ \\
+6-12 months experience: $\approx  24 ^\circ$ \\
+12-24 months experience: $\approx  19 ^\circ$ \\
+
+Weißker (\cite{Weibker2018SpatialEnvironments}) vergleicht in seiner Arbeit die Abweichungen die durch Steering und Teleportations Navigation entstehen. In diesem Falle liegen die Abweichungen im Durchschnitt knapp unter 20 Grad.
+
+Auch nach dem Nutzen unserer Technik sollen die Testpersonen eine Vorstellung der Umgebung haben, welche sie bereisen. Dies soll abgefragt werden, in dem die Nutzer nach jeder Reise die Richtung anzeigen, in der sie den zuletzt besuchten POI (also das letzte Bild) vermuten. Wie oben beschrieben wird daraus die Abweichung in Grad berechnet. 
+Die Ergebnisse von Thorndyke und Weißker legen nahe, dass die durchschnittliche Abweichung zwischen 20 und 40 Grad liegen wird. Das Ziel der Technik wird also sein, diesen Wert möglichst nahe an 20 Grad anzunähern und einen Wert von über 40 Grad zu vermeiden.
+
+Suma et al. (\cite{Suma2010EvaluationEnvironments}) lassen zur Bewertung der Raumwahrnehmung die Nutzer einen Sketch der Karte erstellen und diese von Dritten auf einer Skala von 1 - 5 bewerten. Hierbei wird selbstverständlich nur die Struktur der Karte und nicht die Zeichenqualität bewertet.
+Das vollständige Zeichnen der Karte stellte sich aufgrund der Größe in Vorstudien als nicht praktikabel dar. Jedoch kann das Einzeichnen der bereisten Orte (siehe 9.1.3) ebenfalls als Abfrage der Raumwahrnehmumg
+aufgefasst werden.
+
+\subsection{Ease of Use, Ease of Learning}
+Die System Usability Scale (SUS) \footnote{https://www.usability.gov/how-to-and-tools/methods/system-usability-scale.html}
+bietet eine schnelle und leichte Möglichkeit, die Nutzbarkeit eines Systems zu evaluieren. Studienteilnehmer erhalten einen Fragebogen mit 10 Punkten (z.B. “I think that I would like to use this system frequently.”), wobei diese jeweils mit einem Score von 0 - 4 bewertet werden. Diese werden zusammengezählt und mit 2.5 multipliziert, was in einem Wert zwischen 0 und 100 resultiert.
+
+Die Technik soll daher in unserem Fall einen Wert erreichen, der in diesem SUS nicht unter 70 liegt. Weiterhin soll die Technik so intuitiv sein, dass die Nutzer nach kurzer Vorführung (also nach zwei bis drei Navigationsvorgängen) durch den Versuchsleiter, selbst in der Lage sind, sich einigermaßen sicher und ohne weiter Anleitung zu navigieren. Im Rahmen der Auswertung der Photoportale (\cite{Kunert2014Photoportals}) wurde festgestellt, dass eine Vielzahl von Knöpfen an einem Eingabegerät zur einer steileren Lernkurve führt, weswegen die Technik, wie bereits erwähnt, mit einem einzigen Knopf bedienbar ist.
+
+
+\subsection{Präsenz}
+Um das Gefühl der Präsenz des Nutzers ab zu fragen, schlagen Krekhov et al. (\cite{Krekhov2018GulliVR}) eine Kombination aus dem “Igroup Presence Questionnaire” (@23) und dem Presence Questionnaire(@24, @25) vor:
+
+By focusing more on the interactions with and navigation
+through the game environment, the PQ is a good complement
+of the IPQ to assess all aspects of presence.
+
+Beide evaluieren verschiedene Aspekte der Präsenz und des Realismusgefühls durch Fragen, welche man mit Hilfe einer Likert Skala bewertet.
+
+In unserem Fall wird zwar keine direkte Abfrage des Präsenzgefühls vorgenommen, dennoch soll die Technik zu jederzeit einen konsistenten Fluss bieten und das Immersionsgefühl soll zu keinen Moment eingeschränkt werden.
+
+\subsection{Gruppeninteraktion}
+Kollaboration und Gruppeninteraktion lassen sich schlecht mathematisch messen. 
+Stattdessen sollen drei Kriterien als Maßstab für die Nutzbarkeit in einer Gruppe dienen.
+Beobachtbarkeit, Umkehrbarkeit und Unterbrechbarkeit.
+Auch in diesem Fall sollen drei Fragen zur Abfrage dieser Kriterien dienen, welche von 0 bis 4 bewertet werden:
+
+\textit{Hattest du zu jederzeit das Gefühl, an der Planung und Durchführung der Navigation beteiligt sein zu können?}
+
+\textit{Hattest du das Gefühl, dass alle Mitglieder zu jeder Zeit das Ziel der Reise kannten?}
+
+\textit{Hattest du das Gefühl, den Navigationsvorgang zu jeder Zeit abbrechen zu können, wenn du mit diesem nicht einverstanden warst?}
+
+\section{Studiendurchführung}
+\subsection{Teilnehmer}
+Zur Durchführung der Studie wurden insgesamt XXX Gruppen bestehend aus je zwei Personen eingeladen. XXX der Teilnehmer waren männlich, XXX weiblich.
+
+\subsection{Vorgehen}
+Zu Beginn werden die Teilnehmer etwa 10 Minuten lang in das System eingeführt, wobei ihnen alle notwendigen Funktionen vorgestellt und gezeigt wurden.
+Infolgedessen wird zuerst der SSQ ausgefüllt und die Nutzer erhalten das erste Bild, welches es zu finden gilt. Nachdem sie die richtige Position in der WIM gefunden haben und den Teleport durchgeführt haben, wird die WIM ausgeblendet und der aktuelle Ort geloggt. Daraufhin wird abgefragt, ob sie sich erinnern können, in welcher Richtung der zuletzt bereiste Ort liegt. Für den Fall, dass sie sich sicher sind, soll der Pointer in die Höhe gehalten werden beziehungsweise nach unten, falls sie sich unsicher sind. Auch diese Sicherheit wird geloggt, bevor die Nutzer die tatsächlich vermutete Richtung durch eine Geste mit dem Pointer anzeigen. \textbf{Durch das vorherige Anzeigen der Sicherheit können im folgenden Ergebnisse, bei denen sich ein Nutzer nur an der Zeigerichtung seines Partner orientiert, herausgerechnet werden.}
+Wenn das Team die Zeigerichtungen bestätigt, wird die tatsächliche Abweichung jedes Nutzers geloggt und die WIM wird wieder sichtbar. Die Nutzer erhalten ein neues Foto und starten den Durchlauf erneut.
+Insgesamt mussten die Nutzer XXX Fotos in der Karte finden.
+Nachdem diese alle gefunden wurden, wird erneut der SSQ sowie der SUS und der RAW-TLX ausgefüllt.
+Als letzten Schritt erhalten die Nutzer die Karte mit den Umrissen der Inseln, sowie alle bereisten Bilder und sollen dabei die Nummern und Blickrichtung der Bilder in die Karte eintragen. 
