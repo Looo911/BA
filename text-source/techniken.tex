@@ -1,12 +1,8 @@
-\begin{figure}[!htb]
-\minipage{0.49\textwidth}
-  \includegraphics[width=\linewidth]{images/gulli_vr.png}
-  \caption{In GulliVR \cite{Krekhov2018GulliVRb} navigieren sich die Nutzer durch eine fiktive, mittelalterliche Welt, in dem sie sich zum Überwinden großer Distanzen auf Riesengröße heranwachsen.}\label{fig:awesome_image1}
-\endminipage\hfill
-\minipage{0.49\textwidth}
-  \includegraphics[width=\linewidth]{images/google_navigation.jpg}
-  \caption{A really Awesome Image}\label{fig:awesome_image2}
-\endminipage
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth]{images/google_gulli.jpg}
+  \caption{Google Earth VR (links) vereinigt \textit{Physical Movement}, \textit{Steering}, \textit{Manual Viewpoint Manipulation} und \textit{Physical Movement}, während GulliVR\cite{Krekhov2018GulliVR} dem Nutzer auf Riesengröße wachsen lässt, um große Distanzen zu überwinden}
+  \label{fig:todo}
 \end{figure}
 
 In den letzten Jahren wurden zahlreiche Arbeiten zum Reisen in virtuellen Umgebungen entwickelt und veröffentlicht, die sich (zumeist) an den im letzten Kapitel beschriebenen Kriterien orientierten, wobei aber die Gewichtung dieser Qualtitätsmerkmale sehr varrierte, denn die zu bereisenden virtuellen Realitäten können verschiedenster Natur sein. Daher unterscheiden sich die Techniken zur Navigation anhand ihrer Motivation, der genutzten Hardware, der Nutzerzahl, aber nicht zuletzt auch der Umgebung.
@@ -27,12 +23,13 @@ Das Manövrieren stellt eher das Verändern des Sichtpunkts um ein Objekt herum 
 
 Doch während beim Entwickeln einer neuen Technik die zu bereisende Umgebung und die Motivation, weshalb gereist wird, sicherlich wichtige Faktoren sind, stellt der wichtigste Gesichtspunkt die Art und Weise dar, in welcher navigiert wird. Bowman et al. \cite{Bowman2001AnDesign} unterteilen hierbei Navigation in 5 Metaphern: \textbf{Physical Movement}, \textbf{Manual Viewpoint Manipulation}, \textbf{Steering}, \textbf{Target-based Travel} und \textbf{Route Planning}. 
 \textit{Physical Movement} beschreibt dabei, dass sich der oder die Nutzer in der realen Umgebung mit ihren (realen) Körpern bewegen. Dies kennt man von trackingbasierten Systemen wie der HTC Vive, bei denen sich der Nutzer mit seinem getrackten Headset in einem realen Umfeld bewegt und seine Bewegung in die virtuelle Umgebung, die dieser in diesem Moment sieht, umgesetzt wird.
-Bei der \textit{Manual Viewpoint Manipulation} kann der Nutzer sich in der Welt ”entlanghangeln”. Dies geschieht, in dem er sich virtuellen Gegenständen oder ggf. in der Luft “festhält” und die virtuelle Welt zu sich “heranzieht”. Eine solche Fortbewegungsweise kennt man von allen Versionen von Google Earth: Mit Linksklick oder Swipen auf dem Display oder dem Greifen nach der Welt mit einem VR-Controller kann der Nutzer so über die Erde scrollen.
+Bei der \textit{Manual Viewpoint Manipulation} kann der Nutzer sich in der Welt ”entlanghangeln”. Dies geschieht, in dem er sich virtuellen Gegenständen oder ggf. in der Luft “festhält” und die virtuelle Welt zu sich “heranzieht”. 
 In dreidimensionalen Computerspielen, wie z.B. Ego-Shootern oder Flugsimulatoren, findet man die vermutlich bekannteste Fortbewegungsweise, das \textit{Steering}. Hierbei kontrolliert der Nutzer zu jedem Zeitpunkt seine Translation und Rotation im Raum.
 Gerade seit dem Aufkommen konsumentenfreundlicher Systeme der virtuellen Realität wird die Nutzung von \textit{Targed-based Travel} populärer: Hierbei spezifiziert der Nutzer sein Reiseziel und das System übernimmt die Transition zu diesem. 
+Google Earth VR vereinigt dabei alle Metaphern bis auf \textit{Route Planning}. Durch das Anzeigen der Richtung mit dem Controller und gleichzeitigem Knopfdrücken kann man durch die Welt fliegen (\textit{Steering}). Alternativ kann man auch einen Punkt in der Welt greifen und zu sich heranziehen (\textit{Manual Viewpoint Manipulation}). Um einen \textit{Target-based Travel} einzuleiten, kann man auf der Weltkugel (vgl. Abbildung 8.1), welche man in der linken Hand hat, einen Punkt in der Welt selektieren und wird zu diesem teleportiert. Gleichzeitig ist es zu jedem Zeitpunkt möglich seine aktuelle Position durch Laufen im eigenen Trackingspace zu verändern (\textit{Physical Movement}) 
 
 Ein bekanntes Beispiel dafür ist die in VR oft genutzte Teleportation, mit der der Nutzer sich über die Grenzen des Bereichs, den er durch physische Bewegung erreichen kann, hinfort bewegt (vgl. Abbildung 2.3).
-Das \textit{Route Planning} stellt zu guter Letzt eine Technik da, mit der der Nutzer einen Weg spezifiziert, auf welchen ihn das System daraufhin bewegt. Dies erlaubt dem Nutzer während der Bewegung andere Aufgaben auszuführen und sich nicht ausschließlich auf die Reise zu konzentrieren. Die verwandten Arbeiten die im Folgenden vorgestellt werden, beziehen sich auf die Themen Gruppennavigation und Navigation über große Distanzen und nutzen diese Metaphern. Allerdings kann bereits an dieser Stelle verraten werden, dass \textit{Manual Viewpoint Manipulation} besonders aber \textit{Route Planning} nicht auftauchen, da sie aktuell nicht zu den populärsten Metaphern zählen.
+Das \textit{Route Planning} stellt zu guter Letzt eine Technik da, mit der der Nutzer einen Weg spezifiziert, auf welchen ihn das System daraufhin bewegt. Dies erlaubt dem Nutzer während der Bewegung andere Aufgaben auszuführen und sich nicht ausschließlich auf die Reise zu konzentrieren. Die verwandten Arbeiten die im Folgenden vorgestellt werden, beziehen sich auf die Themen Gruppennavigation und Navigation über große Distanzen und nutzen diese Metaphern. Allerdings kann bereits an dieser Stelle verraten werden, dass \textit{Manual Viewpoint Manipulation} besonders aber \textit{Route Planning} nicht auftauchen, da sie nicht zu den populärsten Metaphern zählen.
 
 \section{Navigation in Gruppen}
 Bisher gibt es sehr wenige Arbeiten, die sich mit dem Thema der Gruppennavigation in virtuellen Umgebungen beschäftigen. Eine dieser Arbeiten, welche inhaltlich nahe am Thema dieser Arbeit ist, ist die Arbeit von Weißker et al. (\cite{WeisskerMulti-RayReality}). Darin wird eine neue Technik vorgestellt, die sich mit dem gemeinsamen Teleport von zwei Personen beschäftigt. Auch hier wird als beispielhaftes Szenario der Stadtführer, welcher einen zweiten Nutzer (passiver Nutzer, Passagier) durch eine Stadt führt, genannt. 
