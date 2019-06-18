@@ -1,7 +1,7 @@
 \begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{images/google_gulli.jpg}
-  \caption{Google Earth VR (links) vereinigt \textit{Physical Movement}, \textit{Steering}, \textit{Manual Viewpoint Manipulation} und \textit{Physical Movement}, während GulliVR\cite{Krekhov2018GulliVR} dem Nutzer auf Riesengröße wachsen lässt, um große Distanzen zu überwinden}
+  \caption{Google Earth VR (links) vereinigt \textit{Physical Movement}, \textit{Steering}, \textit{Manual Viewpoint Manipulation} und \textit{Physical Movement}, während GulliVR\cite{Krekhov2018GulliVR} dem Nutzer auf Riesengröße wachsen lässt, um große Distanzen  in einer mittelalterlichen Umgebung zu überwinden}
   \label{fig:todo}
 \end{figure}
 
@@ -32,6 +32,13 @@ Ein bekanntes Beispiel dafür ist die in VR oft genutzte Teleportation, mit der 
 Das \textit{Route Planning} stellt zu guter Letzt eine Technik da, mit der der Nutzer einen Weg spezifiziert, auf welchen ihn das System daraufhin bewegt. Dies erlaubt dem Nutzer während der Bewegung andere Aufgaben auszuführen und sich nicht ausschließlich auf die Reise zu konzentrieren. Die verwandten Arbeiten die im Folgenden vorgestellt werden, beziehen sich auf die Themen Gruppennavigation und Navigation über große Distanzen und nutzen diese Metaphern. Allerdings kann bereits an dieser Stelle verraten werden, dass \textit{Manual Viewpoint Manipulation} besonders aber \textit{Route Planning} nicht auftauchen, da sie nicht zu den populärsten Metaphern zählen.
 
 \section{Navigation in Gruppen}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{images/multiray.png}
+  \caption{Beim \textit{Multi-Ray Jumping}\cite{WeisskerMulti-RayReality} plant der Navigator für sich und seinen Mitreisenden den Teleport, der mit Hilfe der Visualisierung beider Parabeln spezifiziert wird.}
+  \label{fig:todo}
+\end{figure}
+
 Bisher gibt es sehr wenige Arbeiten, die sich mit dem Thema der Gruppennavigation in virtuellen Umgebungen beschäftigen. Eine dieser Arbeiten, welche inhaltlich nahe am Thema dieser Arbeit ist, ist die Arbeit von Weißker et al. (\cite{WeisskerMulti-RayReality}). Darin wird eine neue Technik vorgestellt, die sich mit dem gemeinsamen Teleport von zwei Personen beschäftigt. Auch hier wird als beispielhaftes Szenario der Stadtführer, welcher einen zweiten Nutzer (passiver Nutzer, Passagier) durch eine Stadt führt, genannt. 
 In diesem Fall spielt sich die Navigation allerdings im Vista-Raum ab und wird auf Head Mounted Display getestet. Sie stellt eine Erweiterung der oben genannten Teleporttechnik dar, wobei der passive Nutzer vom Führenden auf verschiedene Arten mitgenommen wird (\textit{Coupled, Vehicle und Congruent}. Die Technik in unserer Arbeit kann als Ergänzung zu dieser Arbeit gesehen werden. Dabei dient erstere für den Sprung über große Distanzen, letztere dann für kleinere Distanzen innerhalb des sichtbaren Bereichs. Einige Erkenntnisse gelten dabei für beide Distanzen: Zum einen ist es immens wichtig, dass der Navigator zu jedem Zeitpunkt die aktuellen Positionen seiner Mitreisenden kennt und auch weiß, wo diese Position nach dem Teleport sein werden um Kollision zu vermeiden und sicherzustellen, dass entsprechende POIs im Blickfeld von allen liegen. Dies gilt im Übrigen auch für die anderen Nutzer, damit sie sich auf die Konsequenzen des Sprungs einstellen können. Dieses wird dadurch ermöglicht, dass auch der passive Nutzer einen Strahl zu seinem voraussichtlichen Teleport Ziel angezeigt bekommt. Dies minimiert Fehler in der Platzierung durch den aktiven Nutzer und reduziert die kognitive Last beider Nutzer, führt allerdings zu einem etwas längeren Planungsvorgang vor der Reise. Weiterhin stellen die Autoren fest, dass das Wohlbefinden bzw. die Simulatorenkrankheit des passiven Nutzers nicht deutlich stärker ist, als bei einem Einzelnutzer Teleport. Verbunden mit der nötigen Aufmerksamkeit des aktiven Nutzers und einer effektiven Kommunikation wird somit eine erfolgreiche Navigation ermöglicht, sodass der passive Nutzer bei dieser nicht mit der Umgebung kollidiert. Dies stellt nämlich eine der größten Schwierigkeiten der gemeinsamen Navigation dar, womit sich Kulik et al. (\cite{Kulik2011C1x6}) beschäftigen. Diese befassen sich neben der Hardware unseres Lehrstuhls deren Weiterentwicklung acht Jahre später in dieser Arbeit genutzt wird mit dem Problem, dass nicht immer alle Gruppenmitglieder in einem gemeinsamen Tracking Space in den möglicherweise viel kleineren, virtuellen Raum passen. In diesem Fall wird allerdings die \textit{Steering} Navigation genutzt, von der sich jetzt schon abzeichnet, dass sie aufgrund der Dauer und des Motionflows für größere Distanzen weniger geeignet ist, als ein Teleportationsvorgang.
 Ein weiterer Hinweis auf die Navigation mit mehreren Nutzern findet sich in der Arbeit von Beck et al.(\cite{BeckImmersiveTelepresence}). Hier bewegen sich zwei Gruppen gemeinsam in einer virtuellen Welt, wobei ihnen die Möglichkeit gegeben wird, sich unabhängig voneinander zu bewegen oder dem anderen Team zu folgen. Der besondere Aspekt dabei ist aber, dass sich die Nutzer in einer World in Miniature (siehe übernächster Absatz) sehen können und das andere Team in dieser selektieren und an einen anderen Ort bewegen können. Obwohl selbst die Autoren zugeben, dass diese Methode bei den Mitgliedern des Teams, welches versetzt wird, Unwohlsein auslöst, ist die Idee, eine WIM zur Navigation zu nutzen, indem man die Plattform der Nutzer in dieser platziert eine spannende und vielversprechende Vorgehensweise, auf die im übernächsten Absatz genauer eingegangen werden soll. 
@@ -46,6 +53,14 @@ Die drei Hypothesen, dass der Nutzer a) ein erhöhtes Präsenz-/ Überblicksgef�
 Diese Ergebnisse lassen sich allerdings nur bedingt auf die Entwicklung einer Technik für mehrere Nutzer im kohärenten Workspace übertragen, da ein gemeinsames Laufen in einer Gruppe ein Problem darstellt. So müssten alle Nutzer gleichzeitig größer bzw. kleiner skaliert werden, damit die Kohärenz des Workspaces nicht aufgehoben wird. Zusätzlich muss dazu noch ein gemeinsames Laufen koordiniert werden, was nicht nur wegen der zumeist geringen Größe des Tracking Spaces ein schwieriges Unterfangen wäre. Denn in Hinblick auf die Nutzung an unserem semi-immersiven Leinwandsystem ist ein solcher gemeinsamer Spaziergang ausgeschlossen. Ansätze, wie sich der vorhandene Tracking Space wie z.B. durch ”\textit{Redirected Walking}” (\cite{RazzaqueRedirectedWalking}) besser nutzen lassen könnte, sind für mehrere Nutzer in gemeinsamen Workspaces und vorallem am Leinwandsystem ebenfalls keine Alternative. 
 Dennoch lassen sich die Erkenntnisse zur schnelleren Überwindung von Distanzen und des erhöhten Präsenzgefühls durch den Blick von oben nutzen. Denkbar wäre z.B. ein gemeinsames Aufskalieren, mit anschließendem Teleportations- bzw. Steeringvorangs, wobei die wahrgenommene Reisedistanz deutlich abnimmt.
 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{images/cubemap2.png}
+  \caption{Mithilfe der Cubemap (\cite{McCrae2009MultiscaleNavigationb}) werden Distanzen zu umliegenden Objekten berechnet, um daraus die aktuellen Skalierungsparameter zu errechnen. Damit lässt sich die Navigationsgeschwindigkeit anpassen und Kollisionen können vermieden werden.}
+  \label{fig:todo}
+\end{figure}
+
 Einen ähnlichen Weg gehen McCrae et al.\cite{McCrae2009MultiscaleNavigation}.
 Der Nutzer kann dabei also frei in der Welt umherfliegen, wobei seine Größe und seine Bewegungsgeschwindigkeits stets so modifiziert werden, dass er das Gefühl einer fließenden und gleichbleibenden Fortbewegungsgeschwindigkeit wahrnimmt. 
 Die tatsächliche Größe und somit auch Geschwindigkeit, sowie die Anpassung der near- und far-clipping plane werden mit Hilfe einer sogenannten ”\textit{Cube Map}” bestimmt. Dabei wird ausgehend von der aktuellen Kameraposition in alle sechs kanonischen Richtungen ein 64x64 Bit Bild errechnet, welches die Distanzen zu allen Objekten kodiert (vgl. Abbildung). Anhand der minimalen Distanz dieser ”\textit{Cube Map}” werden die resultierenden Skalierungsparameter errechnet.
@@ -59,6 +74,13 @@ Generell lässt sich sagen, dass skalierungsbasierte Techniken einen guten Ansat
 
 \section{Navigation mit Hilfe von World in Miniatures}
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{images/wim1.png}
+  \caption{Die World in Miniature (\cite{Stoakley2010VirtualWIM}) kann zur Manipulation und Navigation genutzt werden. Letzteres geschieht, indem der (hier rote) Avatar in der WIM platziert wird.}
+  \label{fig:todo}
+\end{figure}
+
 Ein weiterer Ansatz zur Navigation in virtuellen Umgebungen wurde bereits 1970 von Stoakley et al. \cite{Stoakley2010VirtualWIM} vorgestellt. Das Konzept der sogenannten \textit{World in Miniature} (im folgenden: WIM) beschreibt eine miniaturisierte Kopie der Umgebung bzw. Welt in der sich der Nutzer gerade befindet. Mit dieser Metapher ist es dem Nutzer nicht nur möglich einen exozentrischen Blick von oben auf die ihn umgebende Hauptszene zu werfen, sondern er kann diese Miniatur auch als Interface nutzen. Die Möglichkeiten dieses Interface sind dabei vielfältig. Genau wie in der Hauptszene bietet sie drei Möglichkeiten zur Interaktion: Selektion, Manipulation und Navigation.
 Selektion und Manipulation bedeutet in diesem Zusammenhang, dass der Nutzer in die WIM “greifen” kann und dabei z.B. die Position und Ausrichtung eines Objektes verändern kann, wobei die Änderungen in der Miniaturwelt zeitgleich in der Hauptszene umgesetzt werden. Die Vorteile einer solchen Manipulation liegen (wortwörtlich) auf der Hand: Der Nutzer muss nicht mehr in der Hauptszene zu Objekten navigieren, sondern kann diese einfach in der WIM zu sich ziehen. 
 Weiterhin besteht aber auch die Möglichkeit, dass der Nutzer die Repräsentation seiner selbst auswählt, um diese (und somit sich selbst) zum entsprechenden Objekt zu manövrieren. So wird die Metapher der Manipulation zur Navigationsmetapher.
@@ -67,6 +89,13 @@ Diese beiden Vorschläge wurden von Stoakleys Kollegen Pausch et al. (\cite{5_pa
 Das hat den den entscheidenden Vorteil, dass der Nutzer seine Aufmerksamkeit nicht erst wieder auf die ihn umgebende Welt richten muss, sondern die Navigation in seinem aktuellen kognitiven Fokus stattfindet, was Verwirrung und Desorientierung mindert. In diesem Fall wird die vormals exozentrische zur egozentrischen Ansicht.
 Die Autoren geben allerdings zu Bedenken, dass bei diesem ”Zoom-In” Vorgang Kollisionen mit der Umgebung stattfinden können, welche durch vorherige Routenplanung ausgeschlossen werden müssten und dass die zurück zu legenden Distanzen die bei dieser Transition sehr groß sein können. 
 Neben dem - in dieser Technik vorhandenen - Motionflow, der bei der Entwicklung unserer Technik ausgeschlossen werden soll, um Unwohlsein zu minimieren, spricht besonders der erste der genannten Aspekte gegen eine Nutzung dieser Technik für mehrere Nutzer. Denn während sich bei einer Gruppe von Nutzern eine solche Transition wegen der verschiedenen Standpunkte sowieso schon schwerer gestaltet, muss zusätzlich Rücksicht auf eventuelle Kollisionen genommen werden.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{images/step_wim.png}
+  \caption{Die auf den Boden projizierte WIM kann bei \cite{LaViola2004Hands-freeEnvironments} zur Navigation benutzt werden, ohne die Hände zu benutzen. Dafür wurden sogenannte "Interaction Slippers" entwickelt.}
+  \label{fig:todo}
+\end{figure}
 
 Eine weitere Möglichkeit, eine WIM zur Navigation zu benutzen, wurde im Anschluss auf die Arbeit von Staokley von LaViola et al. (\cite{LaViola2004Hands-freeEnvironments}) in Form der sogenannten  ”\textit{Step WIM}”  vorgestellt.
 Eine zentrale Motivation dieser Arbeit war, die WIM - anders als bei Stoakley - nicht in der Hand halten zu müssen und die Hände somit für andere Aktivitäten nutzen zu können. 
@@ -77,6 +106,13 @@ Auch kann der Nutzer die WIM durch Laufen skalieren. Die vorgestellten Interakti
 Um die Navigation einzuleiten muss der Nutzer z.B. seine Zehen zusammenführen oder mit der Hüfte eine Hüpfbewegung machen. Der Skalierungsprozess wiederum wird durch das Zusammenführen der Fersen initiiert, woraufhin die WIM durch Laufen skaliert wird und das Zentrum der Skalierung durch die Kopfposition des Nutzers bestimmt wird, bis dieser wieder seine Fersen zusammenführt. Gleichzeitig kann der Nutzer die WIM oder sich selbst in der Welt translatieren, wobei hier die Blickrichtung (in Richtung Boden oder Wand) entscheidet, welche der beiden Funktionen ausgeführt wird.
 Auch wenn diese Interaktionen (vor allem das Skalieren der WIM) ein wichtiger Teil des Navigationsprozesses sind, stellt sich die Frage, ob der Interaktionsfluss nicht doch durch die ungewohnte Nutzung der Füße und Hüfte als Eingabegerät eingeschränkt wird.
 Im Hinblick auf die Benutzung durch mehrere Nutzer lässt sich sagen, dass durch die gute Sichtbarkeit der Bodenprojektion alle Nutzer eine gute Vorstellung ihrer aktuellen Position und der Interaktion mit der WIM hätten. Eine Umsetzung dieser Technik, bei der ein geübter Navigator eine Personengruppe mit Hilfe der Step WIM durch eine virtuelle Umgebung leitet ist durchaus denkbar. Dabei wäre denkbar die, doch etwas ungewohnten Fußeingaben, durch Eingaben mit einem Eingabegerät in der Hand zu ersetzen. So könnte man bei den Pointern, wie sie in unserem System genutzt werden, durch ihren aktuellen Winkel den Kontext ableiten: Neigt man den Controller soweit nach unten, dass sein Vorwärtsvektor nicht mehr die Leinwand, sondern den Boden schneidet, würde automatisch die Interaktion mit der WIM, statt mit der Szene, aktiviert.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{images/step_wim.png}
+  \caption{Die auf den Boden projizierte WIM kann bei \cite{LaViola2004Hands-freeEnvironments} zur Navigation benutzt werden, ohne die Hände zu benutzen. Dafür wurden sogenannte "Interaction Slippers" entwickelt.}
+  \label{fig:todo}
+\end{figure}
 
 Während LaViola et al. ihre ”\textit{Step WIM}” auf kontinuierliche Weise auf- und wieder abskalieren, um weiter entfernte Regionen zu erreichen, nutzen Pierce et al. \cite{pierce_representations} eine diskrete Anzahl von hierarchisch strukturierten Voransichten. Dabei liegt der Schwerpunkt darauf große, virtuelle Umgebungen sehr schnell zu bereisen.
 Mit dem Grundgedanken, dass sich Nutzer vor allem mit Hilfe von visuellen Orientierungspunkten, wie Denkmälern, Sehenswürdigkeiten oder sonstigen eindrücklichen Objekten in einer Umgebung zurechtfinden, stellen die Verfasser dem Nutzer Repräsentationen von Orten zur Verfügung, die er nutzen kann, um an diese Orte zu reisen.
