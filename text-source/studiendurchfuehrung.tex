@@ -56,14 +56,14 @@ Das Ergebnis wird im Folgenden von einer Drittperson geprüft und bewertet.
 Dabei wird jedes richtig platzierte Objekt mit einem Punkt gewertet und es ergibt sich auch hier ein Score von 0 - 18. 
 
 Die Objekterkennung wird in unserem Fall nicht abgefragt, da die Nutzer nur Teile der Karte bereisen und sich dabei auf das Finden der Bilder konzentrieren, sodass der Fokus auf einem anderen Task liegt und etwaige Objekte übersehen werden können.
-Die Objektplatzierung allerdings wird allerdings auch in unserem Fall vorgenommen. Dabei werden den Nutzern, nachdem sie die Karte bereist haben und alle Bilder gefunden haben, diese Bilder erneut ausgehändigt, sowie eine Karte, die nur die Umrisse der bebauten "Inseln" sowie die Kirche als Orientierungspunkt zeigt (vgl. Abbildung).
+Die Objektplatzierung allerdings wird allerdings auch in unserem Fall vorgenommen. Dabei werden den Nutzern, nachdem sie die Karte bereist haben und alle Bilder gefunden haben, diese Bilder erneut ausgehändigt, sowie eine Karte, die nur die Umrisse der bebauten \glqq Inseln \grqq{} sowie die Kirche als Orientierungspunkt zeigt.
 In dieser sollen die Nutzer dann die Bildnummern, sowie die Blickrichtung in Form eines Pfeils einzeichnen.
 
 
-\subsection{Nutzerkomfort:}
+\subsection{Nutzerkomfort}
 Um den Nutzerkomfort zu messen wird neben generellen Fragen zum Wohlbefinden in der Mehrzahl aller Arbeiten (z.B. \cite{Krekhov2018GulliVR}, \cite{Suma2010EvaluationEnvironments}, \cite{Usoh1999WalkingEnvironments}) der Simulator Sickness Questionnaire genutzt (\cite{Kennedy1993SimulatorSickness}). Dieser fragt das generelle Wohlbefinden nach dem Aufenthalt in einer Simulation bzw. in unserem Fall nach der Navigation in einer Simulation ab.
 
-Auch in unserem Fall soll die Technik so entwickelt werden, dass durch sie keine merkliche Verschlechterung des allgemeinen Wohlbefindens der Nutzer eintritt. Dieses wird durch das Durchführen des SSQ vor und nach jedem Durchlauf der Studie ermittelt, wobei sich der Wert nicht oder kaum (hier noch eine Zahl?) verschlechtern dürfte, da unsere Technik wie bereits beschrieben mit einem minimum an Steering und Motionflow auskommt.
+Auch in unserem Fall soll die Technik so entwickelt werden, dass durch sie keine merkliche Verschlechterung des allgemeinen Wohlbefindens der Nutzer eintritt. Dieses wird durch das Durchführen des SSQ vor und nach jedem Durchlauf der Studie ermittelt, wobei sich der Wert nicht oder kaum  verschlechtern dürfte, da unsere Technik wie bereits beschrieben mit einem Minimum an Steering und Motionflow auskommt.
 
 \subsection{Raumwahrnehmung}
 Die Raumwahrnehmung der Nutzer wird häufig (z.B. \cite{Kopper2006DesignEnvironments}, \cite{Richardson1999}) abgefragt, indem der Nutzer die Himmelsrichtung zu einem anderen, schon bekannten Ort anzeigen muss. Hierfür wird der angezeigte Winkel von dem tatsächlichen Winkel subtrahiert, um die tatsächliche Abweichung zu bestimmen (“Pointing error”). \cite{Kopper2006DesignEnvironments} beschreibt dies anders als nach Bowmans Metriken als “Accuracy”.
@@ -85,9 +85,8 @@ Weißker \cite{Weibker2018SpatialEnvironments} vergleicht in seiner Arbeit die A
 Auch nach dem Nutzen unserer Technik sollen die Testpersonen eine Vorstellung der Umgebung haben, welche sie bereisen. Dies soll abgefragt werden, in dem die Nutzer nach jeder Reise die Richtung anzeigen, in der sie den zuletzt besuchten POI (also das letzte Bild) vermuten. Wie oben beschrieben wird daraus die Abweichung in Grad berechnet. 
 Die Ergebnisse von Thorndyke und Weißker legen nahe, dass die durchschnittliche Abweichung zwischen 20 und 40 Grad liegen wird. Das Ziel der Technik wird also sein, diesen Wert möglichst nahe an 20 Grad anzunähern und einen Wert von über 40 Grad zu vermeiden.
 
-Suma et al. (\cite{Suma2010EvaluationEnvironments}) lassen zur Bewertung der Raumwahrnehmung die Nutzer einen Sketch der Karte erstellen und diese von Dritten auf einer Skala von 1 - 5 bewerten. Hierbei wird selbstverständlich nur die Struktur der Karte und nicht die Zeichenqualität bewertet.
-Das vollständige Zeichnen der Karte stellte sich aufgrund der Größe in Vorstudien als nicht praktikabel dar. Jedoch kann das Einzeichnen der bereisten Orte (siehe 9.1.3) ebenfalls als Abfrage der Raumwahrnehmumg
-aufgefasst werden.
+Suma et al. \cite{Suma2010EvaluationEnvironments} lassen zur Bewertung der Raumwahrnehmung die Nutzer einen Sketch der Karte erstellen und diese von Dritten auf einer Skala von 1 - 5 bewerten. Hierbei wird selbstverständlich nur die Struktur der Karte und nicht die Zeichenqualität bewertet.
+Das vollständige Zeichnen der Karte stellte sich aufgrund der Größe in Vorstudien als nicht praktikabel dar. Jedoch kann das Einzeichnen der bereisten Orte (siehe 9.1.3) ebenfalls als Abfrage der Raumwahrnehmumg aufgefasst werden.
 
 \subsection{Nutz- und Lernbarkeit}
 Die System Usability Scale (SUS)\footnote{https://www.usability.gov/how-to-and-tools/methods/system-usability-scale.html}
@@ -97,7 +96,7 @@ Die Technik soll daher in unserem Fall einen Wert erreichen, der in diesem SUS n
 
 
 \subsection{Präsenz}
-Um das Gefühl der Präsenz des Nutzers ab zu fragen, schlagen Krekhov et al. \cite{Krekhov2018GulliVR} eine Kombination aus dem “Igroup Presence Questionnaire” \cite{witmer1998measuring} und dem Presence Questionnaire(\cite{schubert1999}) vor:
+Um das Gefühl der Präsenz des Nutzers ab zu fragen, schlagen Krekhov et al. \cite{Krekhov2018GulliVR} eine Kombination aus dem “Igroup Presence Questionnaire” \cite{witmer1998measuring} und dem Presence Questionnaire\cite{schubert1999} vor:
 
 \begin{addmargin}[25pt]{0pt} 
 
@@ -124,13 +123,42 @@ Auch in diesem Fall sollen drei Fragen zur Abfrage dieser Kriterien dienen, welc
 
 \textit{Hattest du das Gefühl, den Navigationsvorgang zu jeder Zeit abbrechen zu können, wenn du mit diesem nicht einverstanden warst?}
 
+\section{Hypothesen}
+Es ergeben sich folgende Hypothesen:
+
+\begin{hypothesis}
+\label{hyp:test}
+Ungeübte Nutzer sind in der Lage, alle Bilder anzusteuern. 
+\end{hypothesis}
+
+\begin{hypothesis}
+\label{hyp:test}
+Die Nutzer sind nach der Reise in der Lage, die Position und Blickrichtung in einer Karte einzuzeichnen.
+\end{hypothesis}
+
+\begin{hypothesis}
+\label{hyp:test}
+Der Post-Study SSQ zeigt keine Verschlechterung des Wohlbefindens auf.
+\end{hypothesis}
+
+\begin{hypothesis}
+\label{hyp:test}
+Die durchschnittliche Fehlerabweichung  in der Zeigerichtung liegt bei unter 40 Grad.
+\end{hypothesis}
+
+\begin{hypothesis}
+\label{hyp:test}
+Der SUS ergibt einen Wert von 70 oder besser.
+\end{hypothesis}
+
+
 \section{Studiendurchführung}
 \subsection{Teilnehmer}
 Zur Durchführung der Studie wurden insgesamt XXX Gruppen bestehend aus je zwei Personen eingeladen. XXX der Teilnehmer waren männlich, XXX weiblich.
 
 \subsection{Vorgehen}
 Zu Beginn werden die Teilnehmer etwa 10 Minuten lang in das System eingeführt, wobei ihnen alle notwendigen Funktionen vorgestellt und gezeigt wurden.
-Infolgedessen wird zuerst der SSQ ausgefüllt und die Nutzer erhalten das erste Bild, welches es zu finden gilt. Nachdem sie die richtige Position in der WIM gefunden haben und den Teleport durchgeführt haben, wird die WIM ausgeblendet und der aktuelle Ort geloggt. Daraufhin wird abgefragt, ob sie sich erinnern können, in welcher Richtung der zuletzt bereiste Ort liegt. Für den Fall, dass sie sich sicher sind, soll der Pointer in die Höhe gehalten werden beziehungsweise nach unten, falls sie sich unsicher sind. Auch diese Sicherheit wird geloggt, bevor die Nutzer die tatsächlich vermutete Richtung durch eine Geste mit dem Pointer anzeigen. \textbf{Durch das vorherige Anzeigen der Sicherheit können im folgenden Ergebnisse, bei denen sich ein Nutzer nur an der Zeigerichtung seines Partner orientiert, herausgerechnet werden.}
+Infolgedessen wird zuerst der SSQ ausgefüllt und die Nutzer erhalten das erste Bild, welches es zu finden gilt. Nachdem sie die richtige Position in der WIM gefunden haben und den Teleport durchgeführt haben, wird die WIM ausgeblendet und der aktuelle Ort geloggt. Daraufhin wird abgefragt, ob sie sich erinnern können, in welcher Richtung der zuletzt bereiste Ort liegt. Für den Fall, dass sie sich sicher sind, soll der Pointer in die Höhe gehalten werden beziehungsweise nach unten, falls sie sich unsicher sind. Auch diese Sicherheit wird geloggt, bevor die Nutzer die tatsächlich vermutete Richtung durch eine Geste mit dem Pointer anzeigen. Durch das vorherige Anzeigen der Sicherheit können im folgenden Ergebnisse, bei denen sich ein Nutzer nur an der Zeigerichtung seines Partner orientiert, herausgerechnet werden.
 Wenn das Team die Zeigerichtungen bestätigt, wird die tatsächliche Abweichung jedes Nutzers geloggt und die WIM wird wieder sichtbar. Die Nutzer erhalten ein neues Foto und starten den Durchlauf erneut.
 Insgesamt mussten die Nutzer XXX Fotos in der Karte finden.
 Nachdem diese alle gefunden wurden, wird erneut der SSQ sowie der SUS und der RAW-TLX ausgefüllt.
