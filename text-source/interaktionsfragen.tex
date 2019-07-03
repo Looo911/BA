@@ -1,4 +1,4 @@
-Nachdem die grundlegende Herangehensweise der Technik geklärt wurde, wird in diesem Kapitel auf Design- und Konzeptionsideen eingegangen, die bis zur finalen Umsetzung aufkamen. Die meisten der verschiedenen Umsetzungsmöglichkeiten wurden bei der Entwicklung getestet und ihre Praktikabilität analysiert, woraus sich das im letzten Unterpunkt beschriebene, finale Interaktionsdesign der Studie abgeleitet wurde.
+Nachdem die grundlegende Herangehensweise der Technik geklärt wurde, wird in diesem Kapitel auf Design- und Konzeptionsideen eingegangen, die bis zur finalen Umsetzung aufkamen. Die meisten der verschiedenen Umsetzungsmöglichkeiten wurden bei der Entwicklung getestet und ihre Praktikabilität analysiert, woraus sich das im letzten Unterpunkt beschriebene, finale Interaktionsdesign für eine mögliche Studie abgeleitet wurde.
 
 \section{Module}
 Die Technik besteht aus den folgenden vier Grundbausteinen: Der World in Miniature, der miniaturisierten Nutzerplattform in der WIM, einem Selektionstool und dem Portalfenster.
@@ -19,7 +19,7 @@ Um die Technik nutzen zu können bedarf es eines Werkzeugs, mit welchem der Nutz
 Die miniaturisierte Nutzerplattform (im Folgenden: Plattform) repräsentiert die Nutzer (in Form von Avataren), die 3D-Leinwand sowie die Bodenplatte, welche den getrackten Bereich des realen Raumes darstellt. Diese Plattform ist in der WIM zum Beispiel an der Stelle (in rot, vgl. Abbildung 8.1) sichtbar, an denen sich die Nutzer zu diesem Zeitpunkt befinden, damit sie ihre aktuelle Position in der Umgebung einschätzen können. Dabei ist es wichtig, dass die Tracking-Koordinaten, welche die Positionen der Köpfe der Nutzer bestimmen in dieser Version aktualisiert werden, damit die Avatarpositionen denen der Nutzer im realen Raum entsprechen. Eine zweite Form dieser Repräsentation soll nämlich auch zur Reiseplanung dienen. Indem diese Plattform vom steuernden Nutzer in der WIM platziert wird, spezifiziert er die Position, an der sich die Nutzergruppe nach dem Teleport befinden soll.
 
 \textbf{Portalfenster:}\\
-Das Portalfenster (oder \textit{Peephole}) zeigt nach der Platzierung der Preview-Plattform einen Ausschnitt des Ortes, an den gereist werden soll. Dabei erhält jeder seine eigene Perspektive durch dieses "Loch". Das ermöglicht jedem Nutzer durch Veränderung seiner Position eine andere Perspektive in die Welt "hinter" dem Loch (vgl. Abbldung 8.8)
+Das Portalfenster (oder \textit{Peephole}) zeigt nach der Platzierung der Preview-Plattform einen Ausschnitt des Ortes, an den gereist werden soll. Dabei erhält jeder seine eigene Perspektive durch dieses "Loch". Das ermöglicht jedem Nutzer durch Veränderung seiner Position eine andere Perspektive in die Welt "hinter" dem Loch (vgl. Abbildung 8.8)
 
 \section{Position der WIM}
 Eine zentrale Frage, die es zu beantworten galt, war, wo genau die WIM in der Szene sichtbar ist. Drei Herangehensweisen waren dabei naheliegend:
@@ -121,15 +121,17 @@ Generell lässt sich aber sagen, dass die erste Methode in den meisten Fällen a
 
 \subsection{Plane of Interest}
 
+Zusätzlich zu den Platzierungstechniken, die bisher beschrieben wurden, gibt es weiterhin die Möglichkeit, sogenannte \textit{Planes of Interest} zu erstellen. Diese sind ebenfalls Kopien der Nutzerplattformen, welche frei in der WIM positioniert werden können. Die Platzierung funktioniert dabei kontextabhängig:
+Zeigt der Nutzer in die WIM, so läuft sie analog zu den in den vorherigen Unterpunkten beschriebenen Vorgängen ab, wobei durch den Klick eines anderen Knopfes (\textit{PLOI-Knopf}) keine grüne, sondern eine weiße Plattform erscheint. Schneidet man zukünftig diese mit dem Selektionsstrahl, so erhält die blaue Plattform die Ausrichtung und Position der weißen.
+
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.8\textwidth]{images/platform_bluewhite.JPG}
-  \caption{Schneidet man dagegen eine \textit{Plane of Interest}, so wird die Plattform automatisch entlang dieser ausgerichtet.}
+  \caption{Mit der sogenannten \glqq Plane of Interest\grqq{}, lassen sich Aufenthaltsorte speichern. Schneidet man diese weißen Plattformen mit dem Selektionsstrahl so wird die blaue Plattform direkt entsprechend der weißen ausgerichtet.}
   \label{fig:todo}
 \end{figure}
 
-Zusätzlich zu den Platzierungstechniken, die bisher beschrieben wurden, gibt es weiterhin die Möglichkeit, sogenannte \textit{Planes of Interest} zu erstellen. Diese sind ebenfalls Kopien der Nutzerplattformen, welche frei in der WIM positioniert werden können. Die Platzierung funktioniert dabei kontextabhängig:
-Zeigt der Nutzer in die WIM, so läuft sie analog zu den in den vorherigen Unterpunkten beschriebenen Vorgängen ab, wobei durch den Klick eines anderen Knopfes (\textit{PLOI-Knopf}) keine grüne, sondern eine weiße Plattform erscheint. Schneidet man zukünftig diese mit dem Selektionsstrahl, so erhält die blaue Plattform die Ausrichtung und Position der weißen. Dadurch lassen sich für später oder für andere Nutzer Orte speichern, die dann ohne großen Aufwand angesteuert werden können.
+Dadurch lassen sich für später oder für andere Nutzer Orte speichern, die dann ohne großen Aufwand angesteuert werden können.
 Zeigt der Nutzer allerdings nicht in die WIM, so wird auf Knopfdruck der aktuelle Aufenthaltsort gespeichert, indem ebenfalls eine weiße Plattformkopie erstellt wird. So kann der aktuelle Ort zu späteren Zeitpunkten gespeichert werden.
 Will man eine \textit{Plane of Interest} wieder löschen, so drückt man erneut den \textit{PLOI-Knopf}, während man die entsprechende \textit{Plane of Interest} schneidet.
 
@@ -169,15 +171,15 @@ Im Rahmen der Technik ist es grundsätzlich möglich, die Skalierung der Nutzer 
 Obwohl im besten Falle die Teleportationstechnik ausreicht, um ein Ziel zu erreichen, wird zusätzlich eine Möglichkeit zur Steering-Navigation angeboten. Dabei dient ein Spheron als 6-DOF Eingabegerät (vgl. \cite{Kulik2011C1x6}), mit dem man sich über kurze Distanzen (z.B. zum Nachjustieren nach dem Teleport) navigieren kann.
 
 \section{Finales Interaktionsdesign}
-Zur Durchführung der Studie (mit jeweils zwei Nutzern) wurde folgendes Interaktionsdesign umgesetzt:
-Um eine möglichst einfache und für alle sichtbare Interaktion mit der WIM zu ermöglichen, wurde die WIM auf eine feste Höhe von 1.30 Metern kurz vor die Leinwand platziert. Das Entkoppeln, sodass man sie in der Hand halten kann, wurde deaktiviert, da dies einerseits durch zahlreiche Drehungen die Raumwahrnehmung verschlechtern kann, andererseits sollten die Interaktionsmöglichkeiten nicht zu umfangreich sein, um unerfahrene Nutzer nicht zu überfordern. Die anfängliche Größe der WIM liegt bei 1.20 Metern, wobei die Nutzer diese wie oben beschrieben ändern können.
+Zur Durchführung einer Studie (mit jeweils zwei Nutzern) wurde folgendes Interaktionsdesign umgesetzt:
+Um eine möglichst einfache und für alle sichtbare Interaktion mit der WIM zu ermöglichen, wurde die WIM auf eine feste Höhe von 1.30 Metern kurz vor der Leinwand platziert. Das Entkoppeln, sodass man sie in der Hand halten kann, wurde deaktiviert, da dies einerseits durch zahlreiche Drehungen die Raumwahrnehmung verschlechtern kann, andererseits sollten die Interaktionsmöglichkeiten nicht zu umfangreich sein, um unerfahrene Nutzer nicht zu überfordern. Die anfängliche Größe der WIM liegt bei 1.20 Metern, wobei die Nutzer diese wie oben beschrieben ändern können.
 Die WIM ist mit Hilfe einer \textit{Spacemouse} drehbar, jedoch wird die WIM bei jedem öffnen und nach jedem Teleport wieder mit Norden nach oben ausgerichtet.
 Dies soll dazu beitragen, dass Nutzer sich ein besseres räumliches Verständnis aneignen können (vgl. Kapitel 5).
 Jeder der Nutzer besitzt ein Werkzeug, mit dem er die Technik bedienen kann. 
 Für die Platzierung am Boden wird (neben der "Direkten Auswahl" (s.o.)) nur die Methode genutzt wird, erst den POI auszuwählen, dann Plattform in Blickrichtung dessen zu positionieren. Auch hier war der Grund, dass die Nutzer nicht mit zu vielen Möglichkeiten konfontiert werden sollen und diese Methode in Vortest als angenehmer eingeschätzt wurde.
 Auch die Möglichkeit Planes of Interest zu platzieren wurde im Zuge dessen deaktiviert. Es kann immer nur eine Instanz der grünen finalen Plattform geben, aus der immer nur eine Portal erzeugt werden kann.
 Bei jedem neuen Setzen verschwindet das Portalfenster.
-Da in der Studie ausschließlich Ziele am Boden bereist werden, wird statt der WIM eine unsichtbare Bodenplatte geschnitten, damit nicht durch Fehleingaben aus Versehen die Plattform auf Dächern oder Hecken gesetzt wird.
+Da in unserem beispielhaften Studiendesign ausschließlich Ziele am Boden bereist werden, wird statt der WIM eine unsichtbare Bodenplatte geschnitten, damit nicht durch Fehleingaben aus Versehen die Plattform auf Dächern oder Hecken gesetzt wird.
 Bis auf die Skalierung der WIM werden alle Interaktionen durch die Verwendung eines einzigen Knopfes durchgeführt.
 Die Skalierung der Nutzergruppe wird in der Studie nicht verändert, da alle zu bereisenden Ziele in der Skalierung eins zu eins aufzusuchen sind.
 Zusätzlich zur Teleportationstechnik steht den Nutzern der Spheron zum Nachjustieren nach dem Teleport zur Verfügung. Grundsätzlich ist es aber aufgrund der vorher festgelegten Ziele nicht notwendig diesen auch zu nutzen, da alle Ziele mit der Teleportationstechnik alleine gefunden werden können.

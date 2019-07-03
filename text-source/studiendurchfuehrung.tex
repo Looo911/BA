@@ -14,7 +14,8 @@ Bei Pierce et al. (\cite{3_Pierce1997}) liegt der Schwerpunkt vor allem anderen 
 Doch bei der Entwicklung dieser Technik stellen sich zwei Problematiken, denn zum einen gibt es keine Technik, gegen die verglichen werden kann, zum anderen kann die Kommunikation zwischen Gruppenmitgliedern die resultierende Bearbeitungszeit negativ beeinflussen, obwohl sie ein Indikator für eine gut abgestimmte Reiseplanung sein kann.
 
 Die Herangehensweise soll in diesem Fall also eine andere sein:
-Die Navigation durch Platzieren der Nutzerplattform in der WIM kann analog zu den Platzierungsaufgaben mit einem Stift, bzw. mit Lochscheiben und Steckstiften in den frühen Studien von Paul Fitts \cite{fitts1954information} in einem dreidimensionalen Interface aufgefasst werden. Die Anwendbarkeit seines Modells auf zwei- und dreidimensionale virtuelle Umgebungen wurde in unzähligen Folgestudien nachgewiesen (\cite{mackenzie1992fitts}, \cite{drewes2010only}, \cite{zhai2004characterizing} für einen Überblick der Forschung).
+Die Platzierung der Nutzerplattform in der WIM ist ein typisches Beispiel für eine manuelle Zielerfassung deren Parameter von Fitts Gesetz beschrieben wird \cite{fitts1954information}.
+Die Anwendbarkeit seines Modells auf zwei- und dreidimensionale virtuelle Umgebungen wurde in unzähligen Folgestudien nachgewiesen (\cite{mackenzie1992fitts}, \cite{drewes2010only}, \cite{zhai2004characterizing} für einen Überblick der Forschung).
 
 Fitts' Gesetz beschreibt die lineare Abhängigkeit der benötigten Zeit (MT) von einem
 Schwierigkeitsindex (ID), der sich wiederum aus der Zielentfernung (D) und Zielgröße (W) ableiten lässt ($ID=log_2(2D/W)$).
@@ -24,8 +25,8 @@ allem im Falle von 3D Zielbewegungen in virtuellen Umgebungen in denen kein takt
 
 Basierend auf den oben erwähnten Forschungsergebnissen entschieden wir
 uns, dass der maximale Schwierigkeitsindex (ID) der motorischen
-Interaktionsbewegungen bei der Nutzung unserer Technik nicht höher als 5 sein sollte, um Ineffizienz und Frustration zu vermeiden. Offenbar benötigen Nutzer auch für 3D Selektionsaufgaben mit etwas geringeren IDs schon etwa zwei Sekunden. Im
-Zusammenhang mit einer Zielentfernung von einem Meter, was in etwa der Distanz, die man angenehm durch Ausstrecken des Armes erreichen kann entspricht, ergibt sich daraus eine minimale Zielgröße von etwa 5 bis 6 cm. Dies wiederum entspricht bei der gewählten Skalierung (1:100) der WIM einer Genauigkeit von (+/-) 2,5 bis 3,0 Metern, mit denen die miniaturisierte Plattform innerhalb von ca. 2 Sekunden platziert werden kann.
+Interaktionsbewegungen bei der Nutzung unserer Technik nicht höher als 5 sein sollte, um Ineffizienz und Frustration zu vermeiden. Offenbar benötigen Nutzer auch für 3D Selektionsaufgaben mit etwas geringeren IDs schon etwa zwei Sekunden (\cite{grossman2004pointing}, \cite{teather2011pointing}, \cite{lubos2014analysis}). Im
+Zusammenhang mit einer Zielentfernung von einem Meter, was in etwa der Distanz, die man angenehm durch Ausstrecken des Armes erreichen kann entspricht, ergibt sich daraus eine minimale Zielgröße von etwa 5 bis 6 cm. Dies wiederum entspricht bei der gewählten Skalierung (1:100) der WIM einer Genauigkeit von (+/-) 2,5 bis 3,0 Metern. Der rein motorische Zeitaufwand dafür sollte im Bereich von etwas über 2 Sekunden liegen.
 
 
 
@@ -34,11 +35,11 @@ Die Genauigkeit ist stets mit der resultierenden Distanz zwischen Position des N
 Explizit wird dies beispielsweise in \cite{Krekhov2018GulliVR} abgefragt: Bei der \textit{“Aiming”} genannten Technik soll der Nutzer in einem Zielgebiet landen, welches durch eine farbige Zielscheibe gekennzeichnet ist. Die durchschnittliche Distanz zum Bullauge ist dabei das Maß, welches die Genauigkeit bestimmt.
 Wichtig zu erwähnen ist, dass die Genauigkeit in den meisten Fällen mit der Bearbeitungszeit zusammenhängt: Hat man mehr Zeit oder nimmt man sie sich, so ist in den meisten Fällen die Genauigkeit größer (vgl. dazu auch vorheriger Unterpunkt!).
 So wird in manchen Arbeiten (\cite{BowmanTestbedTechniques}, \cite{3_Pierce1997}) eine bestimmte Genauigkeit vorausgesetzt, in dem man sich innerhalb eines bestimmten Radius zum Ziel befinden muss, damit die Reise als abgeschlossen zählt.
-Die Genauigkeit so exakt zu quantifizieren ist in unseren Augen allerdings nicht zwangsläufig notwendig und wird durch den Fitt's Task hinreichend abgedeckt. 
-Viel wichtiger, als möglichst nahe an einem vorher festgelegten Punkt zu landen, ist unserer Meinung nach, dass das gewünschte Ziel vollständig sichtbar ist. 
+Die Genauigkeit so exakt zu quantifizieren ist in unseren Augen allerdings nicht zwangsläufig notwendig. 
+Viel wichtiger, als möglichst nahe an einem vorher festgelegten Punkt zu landen, ist unserer Meinung nach, dass das gewünschte Ziel für alle Nutzer vollständig sichtbar ist. 
 Deshalb erhalten die Nutzer in unserer Studie Bilder von Objekten, die sich in der zu bereisenden Umgebung befinden, welche sie so ansteuern müssen, dass alle Details auf dem Bild auch in ihrer Perspektive zu sehen sind.
 
-Ein weiteres Kriterium, mit dem die Genauigkeit ebenfalls gemessen werden kann ist die Häufigkeit von Kollisionen mit der virtuellen Umgebung(vgl. \cite{Suma2010EvaluationEnvironments}). Da unsere Technik die Möglichkeit bietet, die Nutzerplattform so zu platzieren, dass Kollisionen im Vorhinein ausgeschlossen werden und eine zukünftige Weiterentwicklung der Technik eine Kollisionsabfrage beinhalten könnte, soll dieses Kriterium nicht weiter abgefragt werden.
+Ein weiteres Kriterium, mit dem die Genauigkeit ebenfalls gemessen werden kann ist die Häufigkeit von Kollisionen mit der virtuellen Umgebung(vgl. \cite{Suma2010EvaluationEnvironments}). Unsere Technik bietet die Möglichkeit, die Nutzerplattform so zu platzieren, dass Kollisionen im Vorhinein vermieden werden. Dies liegt jedoch im Verantwortungsbereich des Nutzers und kann in engen virtuellen Umgebungen sehr umständlich sein. Eine zukünftige Weiterentwicklung der Technik wäre daher eine automatische Kollisionsvermeidung, die eine gewählte Plattformposition nachjustiert.
 
 
 \subsection{Informationsaufnahme}
@@ -112,7 +113,7 @@ Beide evaluieren verschiedene Aspekte der Präsenz und des Realismusgefühls dur
 In unserem Fall wird zwar keine direkte Abfrage des Präsenzgefühls vorgenommen, dennoch soll die Technik zu jederzeit einen konsistenten Fluss bieten und das Immersionsgefühl soll zu keinen Moment eingeschränkt werden.
 
 \subsection{Gruppeninteraktion}
-Kollaboration und Gruppeninteraktion lassen sich schlecht mathematisch messen. 
+Die Qualität einer Gruppenkooperation lässt sich schlecht mathematisch messen. 
 Stattdessen sollen drei Kriterien als Maßstab für die Nutzbarkeit in einer Gruppe dienen.
 Beobachtbarkeit, Umkehrbarkeit und Unterbrechbarkeit.
 Auch in diesem Fall sollen drei Fragen zur Abfrage dieser Kriterien dienen, welche von 0 bis 4 bewertet werden:
@@ -123,7 +124,7 @@ Auch in diesem Fall sollen drei Fragen zur Abfrage dieser Kriterien dienen, welc
 
 \textit{Hattest du das Gefühl, den Navigationsvorgang zu jeder Zeit abbrechen zu können, wenn du mit diesem nicht einverstanden warst?}
 
-\section{Hypothesen}
+\section{Denkbare Hypothesen}
 Es ergeben sich folgende Hypothesen:
 
 \begin{hypothesis}
@@ -133,7 +134,7 @@ Ungeübte Nutzer sind in der Lage, alle Bilder anzusteuern.
 
 \begin{hypothesis}
 \label{hyp:test}
-Die Nutzer sind nach der Reise in der Lage, die Position und Blickrichtung in einer Karte einzuzeichnen.
+Die Nutzer sind nach der Reise in der Lage, die Position und Blickrichtung von mehr als 80\% der bereisten Orte in einer Karte einzuzeichnen.
 \end{hypothesis}
 
 \begin{hypothesis}
@@ -152,11 +153,41 @@ Der SUS ergibt einen Wert von 70 oder besser.
 \end{hypothesis}
 
 
-\section{Studiendurchführung}
-\subsection{Teilnehmer}
-Zur Durchführung der Studie wurden insgesamt XXX Gruppen bestehend aus je zwei Personen eingeladen. XXX der Teilnehmer waren männlich, XXX weiblich.
+\section{Pilotstudie}
+
+Da der Umfang dieser Arbeit es nicht zuließ, eine vollständige Studie durchzuführen, wird an dieser Stelle beschrieben, wie ein beispielhaftes Studienkonzept aussehen würde und dieses in Form von einer kurzen Pilotstudie mit insgesamt drei Teilnehmern durchgeführt. Dies soll aufzeigen, dass die Studie grundsätzlich durchführbar wäre, die mathematischen Berechnungen stimmen und die Ergebnisse grundsätzlich im erwartbaren Bereich liegen.
 
 \subsection{Vorgehen}
+Die drei Teilnehmer hatten unterschiedliche Vorkenntnisse mit dem System. Teilnehmer 1 hat weitreichende Vorkenntnisse im Bereich VR und der Nutzung der Leinwand. Weiterhin hat er bereits Vorkenntnisse in der Map, da er sie bereits in vorherigen Tests gesehen hat. Teilnehmer 2 hat ebenfalls Vorkenntnisse, ist jedoch mit dem Aufbau der Map weniger vertraut. Teilnehmer 3 dagegen hatte bislang keinerlei Erfahrungen im Umgang mit dem Leinwandsystem geschweige denn mit der Navigation in dieser. Der Studienleiter fungierte hierbei jeweils als Partner.
+
+Da nur die grundsätzliche Machbarkeit der Studie getestet werden sollte, wurde auf den SSQ und des SUS verzichtet. Die Teilnehmer erhielten insgesamt 11 Fotos, die in der Map bereist werden sollten. Nach jedem Teleport wurde durch den Studienleiter abgefragt, ob sich der Teilnehmer erinnert, in welcher Himmelsrichtung sich der zuletzt besuchte Ort befindet. Dies wurde geloggt, indem der Teilnehmer entweder die Hand nach oben (für ja) oder nach unten (für nein) hält.
+Infolgedessen wurde der Teilnehmer gebeten, diese Himmelsrichtung mit seinem Pointer anzuzeigen. Nachdem diese geloggt wurde, erhielt der Teilnehmer das nächste Foto. Während bei Teilnehmer A und B der Studienleiter bei der Navigation unterstützte, damit etwaige Ziele schneller gefunden und bereist werden können, sollte Teilnehmer C als ungeübter Teilnehmer die Navigation selbst vornehmen und wurde nur in seltenen Fällen unterstützt.
+
+Die zu bereisenden Orte wurden dabei so gewählt, dass der Nutzer eine möglichst variable Anzahl an Distanzen und Rotationen während seiner Fahrt vornimmt (vgl. dazu Appendix, Spalte \glqq Distance To Last Pos.\grqq{} und Spalte \glqq Angle To Last Pos.\grqq{}).
+
+
+\subsection{Ergebnisse}
+
+Gespeichert wurden die Bestätigung, ob der Nutzer weiß, wo sich das letzte Ziel befand (\textit{Certainty P1}), die absolute Winkelabweichung beim Zeigen mit dem Pointer (\textit{Abs. Error P1 Pointer}), sowie die Abweichung beim Zielen mit dem Pointer, wobei der Vektor vom Kopfmittelpunkt zur Pointerspitze zu Grunde gelegt wurde (\textit{Abs. Error P1 Pointer-Head}), sowie die Zeit zwischen dem Bestätigen der Sicherheit und dem Anzeigen der vermuteten Richtung (\textit{Task Completion Time}). Weiterhin wurde geloggt, wer die Plattform in der WIM platzierte (\textit{Green Platform Placement P\#}) und wer den Einstieg bestätigte (\textit{Teleport Confirmation P\#}).
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\textwidth]{images/ergebnisse.png}
+  \caption{Die Ergebnisse der Pilotstudie.}
+  \label{fig:todo}
+\end{figure}
+
+
+\subsection{Verbesserungsvorschläge}
+Fotos dürfen kein Hinweis auf Position in Map verraten
+Man darf den letzten Punkt des Teleports nicht sehen
+Multinutzer
+
+
+
+\subsection{Vorgehen}
+
+
 Zu Beginn werden die Teilnehmer etwa 10 Minuten lang in das System eingeführt, wobei ihnen alle notwendigen Funktionen vorgestellt und gezeigt wurden.
 Infolgedessen wird zuerst der SSQ ausgefüllt und die Nutzer erhalten das erste Bild, welches es zu finden gilt. Nachdem sie die richtige Position in der WIM gefunden haben und den Teleport durchgeführt haben, wird die WIM ausgeblendet und der aktuelle Ort geloggt. Daraufhin wird abgefragt, ob sie sich erinnern können, in welcher Richtung der zuletzt bereiste Ort liegt. Für den Fall, dass sie sich sicher sind, soll der Pointer in die Höhe gehalten werden beziehungsweise nach unten, falls sie sich unsicher sind. Auch diese Sicherheit wird geloggt, bevor die Nutzer die tatsächlich vermutete Richtung durch eine Geste mit dem Pointer anzeigen. Durch das vorherige Anzeigen der Sicherheit können im folgenden Ergebnisse, bei denen sich ein Nutzer nur an der Zeigerichtung seines Partner orientiert, herausgerechnet werden.
 Wenn das Team die Zeigerichtungen bestätigt, wird die tatsächliche Abweichung jedes Nutzers geloggt und die WIM wird wieder sichtbar. Die Nutzer erhalten ein neues Foto und starten den Durchlauf erneut.
