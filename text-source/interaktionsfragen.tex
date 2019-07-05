@@ -9,7 +9,7 @@ Die verwendete WIM soll in unserem Fall eine exakte Kopie der Umgebung sein und 
  \textbf{Selektionstool:}\\
 Um die Technik nutzen zu können bedarf es eines Werkzeugs, mit welchem der Nutzer mit der WIM interagieren kann. 
 
-\textbf{Minaturisierte Nutzerplattform:}\\
+\textbf{Miniaturisierte Nutzerplattform:}\\
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.8\textwidth]{images/platform_bgr.jpg}
@@ -19,7 +19,7 @@ Um die Technik nutzen zu können bedarf es eines Werkzeugs, mit welchem der Nutz
 Die miniaturisierte Nutzerplattform (im Folgenden: Plattform) repräsentiert die Nutzer (in Form von Avataren), die 3D-Leinwand sowie die Bodenplatte, welche den getrackten Bereich des realen Raumes darstellt. Diese Plattform ist in der WIM zum Beispiel an der Stelle (in rot, vgl. Abbildung 8.1) sichtbar, an denen sich die Nutzer zu diesem Zeitpunkt befinden, damit sie ihre aktuelle Position in der Umgebung einschätzen können. Dabei ist es wichtig, dass die Tracking-Koordinaten, welche die Positionen der Köpfe der Nutzer bestimmen in dieser Version aktualisiert werden, damit die Avatarpositionen denen der Nutzer im realen Raum entsprechen. Eine zweite Form dieser Repräsentation soll nämlich auch zur Reiseplanung dienen. Indem diese Plattform vom steuernden Nutzer in der WIM platziert wird, spezifiziert er die Position, an der sich die Nutzergruppe nach dem Teleport befinden soll.
 
 \textbf{Portalfenster:}\\
-Das Portalfenster (oder \textit{Peephole}) zeigt nach der Platzierung der Preview-Plattform einen Ausschnitt des Ortes, an den gereist werden soll. Dabei erhält jeder seine eigene Perspektive durch dieses "Loch". Das ermöglicht jedem Nutzer durch Veränderung seiner Position eine andere Perspektive in die Welt "hinter" dem Loch (vgl. Abbildung 8.8)
+Das Portalfenster (oder \textit{Peephole}) zeigt nach der Platzierung der Preview-Plattform einen Ausschnitt des Ortes, an den gereist werden soll. Dabei erhält jeder seine eigene Perspektive durch dieses \glqq Loch\grqq{}. Das ermöglicht jedem Nutzer durch Veränderung seiner Position eine andere Perspektive in die Welt \glqq hinter\grqq{} dem Loch (vgl. Abbildung 8.8).
 
 \section{Position der WIM}
 Eine zentrale Frage, die es zu beantworten galt, war, wo genau die WIM in der Szene sichtbar ist. Drei Herangehensweisen waren dabei naheliegend:
@@ -44,7 +44,7 @@ Der steuernde Nutzer hält die WIM nämlich oft so, dass die wichtigen Punkte f�
 
 \subsection{Tabletop}
 Eine weitere Möglichkeit ist die Platzierung der WIM auf einem Holotisch, wie er in unserem Labor verfügbar ist.
-Dadurch wäre die WIM für alle sichtbar und gleichzeitig nicht im Sichtfeld auf die Hauptszene. Gleichzeitig bedeutet dies allerdings, dass bei jedem Navigationsvorgang die Aufmerksamkeit der Nutzer von der Szene zum Tisch wandern muss, was denn Interaktionsfluss stören kann. Diese Option wurde im Rahmen der Arbeit nicht implementiert.
+Dadurch wäre die WIM für alle sichtbar und gleichzeitig nicht im Sichtfeld auf die Hauptszene. Gleichzeitig bedeutet dies allerdings, dass bei jedem Navigationsvorgang die Aufmerksamkeit der Nutzer von der Szene zum Tisch wandern muss, was den Interaktionsfluss stören kann. Diese Option wurde im Rahmen der Arbeit nicht implementiert.
 
 \subsection{Zentral, Mitte der Nutzergruppe}
 
@@ -59,7 +59,7 @@ Dadurch wäre die WIM für alle sichtbar und gleichzeitig nicht im Sichtfeld auf
 Stellt man die WIM zentral vor die Nutzergruppe (also kurz vor die Leinwand) bringt dies den Vorteil mit sich, dass sie von allen Nutzern gut eingesehen werden kann.
 Dabei ist es von Nöten, dass sie durch eine zusätzliche Eingabe drehbar ist, da man sonst Teile, die nur von der Rückseite der Leinwand aus sichtbar wären, nicht auswählen kann.
 In unserem Fall wurde dies durch das Drehen eines Joysticks am Spheron ermöglicht.
-Als optimale Höhe stellte sich dabei ungefähr 1,30 Meter heraus. So kann man die WIM gut überblicken und muss sich gleichzeitig nicht zu weit bücken
+Als optimale Höhe stellte sich dabei ungefähr 1,30 Meter heraus. So kann man die WIM gut überblicken und muss sich gleichzeitig nicht zu weit bücken.
 
 Angelehnt an Kunert et al. \cite{Kunert2014Photoportals} wurde ebenfalls eine Möglichkeit implementiert, bei der sich die WIM sowohl in der Hand, als auch in zentraler Position befindet. Solange ein Nutzer den Holzwürfel in der Hand hat, befindet sich die WIM ebenfalls dort. Stellt er ihn in der Nähe des Spherons ab, wird die WIM mit diesem gekoppelt und befindet sich ab diesem Moment in der oben beschriebenen Zentralposition.
 
@@ -75,7 +75,7 @@ Dennoch wird den Nutzern die Möglichkeit gegeben, die Skalierung der WIM zu än
 Die Größe der WIM hat eine wichtige Auswirkung auf die Bedienbarkeit der Technik und somit auch der Bearbeitungszeit der Technik. Im folgenden Kapitel (9.1.1) wird darauf näher eingegangen.
 
 \section{Platzierung der Nutzerplattform}
-Um das Ziel der Reise zu bestimmen soll die Plattform so platziert werden können, dass jede mögliche und gewünschte Position und Orientierung erreichbar ist., wobei der Aufwand der Platzierung minimal gehalten werden soll.
+Um das Ziel der Reise zu bestimmen soll die Plattform so platziert werden können, dass jede mögliche und gewünschte Position und Orientierung erreichbar ist, wobei der Aufwand der Platzierung minimal gehalten werden soll.
 
 \subsection{Positionierung in der Luft}
 
@@ -87,7 +87,7 @@ Um das Ziel der Reise zu bestimmen soll die Plattform so platziert werden könne
 \end{figure}
 
 
-Um die Plattform in der WIM zu platzieren, sodass sie schwebend mit freier Rotation im Raum steht, wurde eine Art \textit{Gabel-Technik} entwickelt. Hierbei wird an das Ende des Pointers ein kurzer (ca. 20cm) Strahl gehängt, an dessen Ende sich die Miniatur befindet (in der Abbildung in blau zu sehen). Wird die aktuelle Position dieser Repräsentation in der WIM durch einen Klick bestätigt, wird eine Kopie erstellt, die die finale Position widerspiegelt, die die Nutzer nach der Reise haben werden (siehe in Grün in der Abbildung).
+Um die Plattform in der WIM zu platzieren, sodass sie schwebend mit freier Rotation im Raum steht, wurde eine Art \textit{Gabel-Technik} entwickelt. Hierbei wird an das Ende des Pointers ein kurzer (ca. 20 cm) Strahl gehängt, an dessen Ende sich die Miniatur befindet (in der Abbildung in blau zu sehen). Wird die aktuelle Position dieser Repräsentation in der WIM durch einen Klick bestätigt, wird eine Kopie erstellt, die die finale Position widerspiegelt, die die Nutzer nach der Reise haben werden (siehe in Grün in der Abbildung).
 Somit ist es den Nutzern möglich ihre Orientierung und Position in der Welt frei zu bestimmen, um z.B. auch von oben auf Gebäude blicken zu können.
 
 
@@ -110,7 +110,7 @@ Berührt die blaue Plattform der \textit{Gabel-Technik} den Boden, so wird sie a
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{images/look.jpg}
-  \caption{Position und Blickrichtung: Hält man den Knopf länger gedrückt, während man den Boden schneidet bietet das System zwei Möglichkeiten: Entweder die Plattform wird an den aktuellen Punkt gesetzt und man bestimmt fortan die Blickrichtung (links) oder man wählt erst den Punkt den man sehen will und positioniert danach die Plattform, die dann immer in Richtung dieses Punktes ausgerichtet ist (rechts)}
+  \caption{Position und Blickrichtung: Hält man den Knopf länger gedrückt, während man den Boden schneidet bietet das System zwei Möglichkeiten: Entweder die Plattform wird an den aktuellen Punkt gesetzt und man bestimmt fortan die Blickrichtung (links) oder man wählt erst den Punkt den man sehen will und positioniert danach die Plattform, die dann immer in Richtung dieses Punktes ausgerichtet ist (rechts).}
   \label{fig:todo}
 \end{figure}
 
@@ -173,10 +173,10 @@ Obwohl im besten Falle die Teleportationstechnik ausreicht, um ein Ziel zu errei
 \section{Finales Interaktionsdesign}
 Zur Durchführung einer Studie (mit jeweils zwei Nutzern) wurde folgendes Interaktionsdesign umgesetzt:
 Um eine möglichst einfache und für alle sichtbare Interaktion mit der WIM zu ermöglichen, wurde die WIM auf eine feste Höhe von 1.30 Metern kurz vor der Leinwand platziert. Das Entkoppeln, sodass man sie in der Hand halten kann, wurde deaktiviert, da dies einerseits durch zahlreiche Drehungen die Raumwahrnehmung verschlechtern kann, andererseits sollten die Interaktionsmöglichkeiten nicht zu umfangreich sein, um unerfahrene Nutzer nicht zu überfordern. Die anfängliche Größe der WIM liegt bei 1.20 Metern, wobei die Nutzer diese wie oben beschrieben ändern können.
-Die WIM ist mit Hilfe einer \textit{Spacemouse} drehbar, jedoch wird die WIM bei jedem öffnen und nach jedem Teleport wieder mit Norden nach oben ausgerichtet.
+Die WIM ist mit Hilfe einem Joystick drehbar, jedoch wird die WIM bei jedem öffnen und nach jedem Teleport wieder mit Norden nach oben ausgerichtet.
 Dies soll dazu beitragen, dass Nutzer sich ein besseres räumliches Verständnis aneignen können (vgl. Kapitel 5).
 Jeder der Nutzer besitzt ein Werkzeug, mit dem er die Technik bedienen kann. 
-Für die Platzierung am Boden wird (neben der "Direkten Auswahl" (s.o.)) nur die Methode genutzt wird, erst den POI auszuwählen, dann Plattform in Blickrichtung dessen zu positionieren. Auch hier war der Grund, dass die Nutzer nicht mit zu vielen Möglichkeiten konfontiert werden sollen und diese Methode in Vortest als angenehmer eingeschätzt wurde.
+Für die Platzierung am Boden wird (neben der \glqq Direkten Auswahl\grqq{} (s.o.)) nur die Methode genutzt wird, erst den POI auszuwählen, dann Plattform in Blickrichtung dessen zu positionieren. Auch hier war der Grund, dass die Nutzer nicht mit zu vielen Möglichkeiten konfrontiert werden sollen und diese Methode in Vortest als angenehmer eingeschätzt wurde.
 Auch die Möglichkeit Planes of Interest zu platzieren wurde im Zuge dessen deaktiviert. Es kann immer nur eine Instanz der grünen finalen Plattform geben, aus der immer nur eine Portal erzeugt werden kann.
 Bei jedem neuen Setzen verschwindet das Portalfenster.
 Da in unserem beispielhaften Studiendesign ausschließlich Ziele am Boden bereist werden, wird statt der WIM eine unsichtbare Bodenplatte geschnitten, damit nicht durch Fehleingaben aus Versehen die Plattform auf Dächern oder Hecken gesetzt wird.
